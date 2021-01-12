@@ -1,0 +1,49 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything:
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# some more ls aliases
+alias l='ls -laG'
+export EDITOR='/usr/bin/vi'
+
+############################################## added on
+
+alias ps='ps aux'
+alias grep='grep --color'
+
+
+if [[ -e /etc/bash_completion.d/git-prompt ]]; then
+    . /etc/bash_completion.d/git-prompt
+fi
+
+uid=`id -u`
+if [ $uid == 0 ]; then
+    PS1='\n***** \u@\h:\w ***** \n# '
+else
+    PS1='\n***** \u@\h:\w$(__git_ps1 " (%s)") [$(date +"%H:%M:%S")] ***** \n% '
+fi
+
+# https://stackoverflow.com/a/20211241
+if [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]; then
+    . /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+fi
+
+source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+
+
+alias tunnel_with='autossh -M 20004 -CND 1086'
+alias lynxdump='lynx -assume_charset=utf-8 -display_charset=utf-8 -force_html -dump'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

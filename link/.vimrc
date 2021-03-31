@@ -184,7 +184,15 @@ nmap <C-w><C-o> <C-w>o
 call plug#begin()
 Plug 'pearofducks/ansible-vim'
 " "Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.sh' }
+Plug 'ojroques/vim-oscyank'
 call plug#end()
+
+
+" visual mode no recursive map ,y to OSCYank"
+vnoremap <leader>y :OSCYank<CR>
+" immediately copy after a yank operation
+autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | OSCYankReg " | endif
+
 
 " YAML documents are required to have a 2 space indentation.
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

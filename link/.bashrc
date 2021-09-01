@@ -170,3 +170,7 @@ if [ -e '/usr/local/bin/virtualenv' ]; then
 	export PIP_REQUIRE_VIRTUALENV=true
 	source /usr/local/bin/virtualenvwrapper.sh
 fi
+
+
+# apt install autojump
+. /usr/share/autojump/autojump.sh

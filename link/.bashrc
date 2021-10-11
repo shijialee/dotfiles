@@ -161,6 +161,7 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 
 source ~/.dotfiles/git-completion.bash
+source ~/.dotfiles/.bash_4mac
 
 # setup virtualenv env
 if [ -e '/usr/local/bin/virtualenv' ]; then
@@ -174,3 +175,4 @@ fi
 
 # apt install autojump
 . /usr/share/autojump/autojump.sh
+

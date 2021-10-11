@@ -3,6 +3,7 @@
 
 # link
 ln -fsvn ~/.dotfiles/link/.profile             ~/.profile
+ln -fsvn ~/.dotfiles/link/.bash_profile        ~/.bash_profile
 ln -fsvn ~/.dotfiles/link/.bashrc              ~/.bashrc
 ln -fsvn ~/.dotfiles/link/.vimrc               ~/.vimrc
 ln -fsvn ~/.dotfiles/link/.vim                 ~/.vim

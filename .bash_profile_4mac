@@ -47,3 +47,12 @@ alias lynxdump='lynx -assume_charset=utf-8 -display_charset=utf-8 -force_html -d
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# run `brew install autojump` first
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+# https://stackoverflow.com/a/20211241
+# for mac
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+
+[ -f /opt/homebrew/bin/mutagen ] && mutagen daemon start

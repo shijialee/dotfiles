@@ -161,18 +161,4 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 
 source ~/.dotfiles/git-completion.bash
-source ~/.dotfiles/.bash_4mac
-
-# setup virtualenv env
-if [ -e '/usr/local/bin/virtualenv' ]; then
-	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-	export WORKON_HOME=$HOME/.virtualenvs
-	export PROJECT_HOME=$HOME/pydev
-	export PIP_REQUIRE_VIRTUALENV=true
-	source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-
-# apt install autojump
-. /usr/share/autojump/autojump.sh
-
+source ~/.dotfiles/.bash_profile_4mac

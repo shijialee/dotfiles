@@ -162,3 +162,6 @@ export HISTFILESIZE=10000
 
 source ~/.dotfiles/git-completion.bash
 source ~/.dotfiles/.bash_profile_4mac
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

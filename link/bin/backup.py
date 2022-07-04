@@ -15,5 +15,8 @@ for file_path in files_to_backup:
     if not os.path.isfile(file_path):
         raise Exception(file_path + ' not exist')
 
-    dest_file_path = backup_dir + os.path.basename(file_path) + '.' + time.strftime('%Y%m%d')
+    _, filename = os.path.split(file_path)
+    name, ext = os.path.splitext(filename)
+    new_filename = name + '.' + time.strftime('%Y%m%d') + ext
+    dest_file_path = os.path.join(backup_dir, new_filename)
     shutil.copyfile(file_path, dest_file_path)

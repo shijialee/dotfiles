@@ -90,8 +90,9 @@ au BufWritePost *.pl,*.pm,*.t !perl -wc -Ilib %
 au BufWritePost *.php !php -l %
 
 " Use the Solarized Dark theme
-let g:solarized_termtrans = 1
-colorscheme solarized
+"let g:solarized_termtrans = 1
+"colorscheme solarized
+colorscheme lucario
 
 "highlight whitespace end of line.
 highlight WhiteSpaceEOL ctermbg=darkgreen guibg=lightgreen

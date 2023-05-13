@@ -122,7 +122,8 @@ set viminfo^=%
 map 0 ^
 
 " delete end of line trailing space on save
-autocmd BufWritePre *.php :%s/\s\+$//e
+" autocmd BufWritePre *.php :%s/\s\+$//e
+autocmd FileType c,java,perl,php,python,go,ts,tsx,rs autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 
 " set vim to chdir for each file

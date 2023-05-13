@@ -165,3 +165,5 @@ source ~/.dotfiles/.bash_profile_4mac
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

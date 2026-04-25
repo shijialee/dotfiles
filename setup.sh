@@ -12,6 +12,7 @@ ln -fsvn ~/.dotfiles/link/.gitignore_global    ~/.gitignore_global
 ln -fsvn ~/.dotfiles/link/.ssh/config          ~/.ssh/config
 ln -fsvn ~/.dotfiles/link/.screenrc            ~/.screenrc
 ln -fsvn ~/.dotfiles/link/kitty                ~/.config/kitty
+ln -fsvn ~/.dotfiles/link/AutoRaise            ~/.config/AutoRaise
 
 # copy
 # cp ~/.dotfiles/copy/    ~/

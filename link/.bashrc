@@ -166,4 +166,18 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Make sure it appears even after rvm, git-prompt and other shell extensions that manipulate the prompt.
+eval "$(direnv hook bash)"
+
+#eval "$(starship init bash)"
+eval "$(uv generate-shell-completion bash)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/qiang/.lmstudio/bin"
+# End of LM Studio CLI section
+
+
+# Added by tally installer
+export PATH="$HOME/.tally/bin:$PATH"

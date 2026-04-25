@@ -67,3 +67,6 @@ logs/
 
 # IDE files
 .idea/
+
+#
+venv/

@@ -34,11 +34,17 @@ else
 fi
 
 # https://stackoverflow.com/a/20211241
-if [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]; then
-    . /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+if [ -f /Library/Developer/CommandLineTools/usr/libexec/git-core/git-completion.bash ]; then
+    . /Library/Developer/CommandLineTools/usr/libexec/git-core/git-completion.bash
 fi
 
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+if [ -f /Library/Developer/CommandLineTools/usr/libexec/git-core/git-prompt.sh ]; then
+    source /Library/Developer/CommandLineTools/usr/libexec/git-core/git-prompt.sh
+fi
+
+if [[ -e /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]]; then
+    source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+fi
 
 
 alias tunnel_with='autossh -M 20004 -CND 1086'
@@ -54,5 +60,8 @@ export NVM_DIR="$HOME/.nvm"
 # https://stackoverflow.com/a/20211241
 # for mac
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+# ruby brew install
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin/:$PATH"
 
 [ -f /opt/homebrew/bin/mutagen ] && mutagen daemon start

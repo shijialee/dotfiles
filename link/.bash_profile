@@ -23,3 +23,12 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+export PATH=$HOME/.local/bin:$PATH
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/qiang/.lmstudio/bin"
+# End of LM Studio CLI section
+

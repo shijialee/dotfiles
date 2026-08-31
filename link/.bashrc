@@ -162,16 +162,13 @@ export HISTFILESIZE=10000
 
 source ~/.dotfiles/git-completion.bash
 source ~/.dotfiles/.bash_profile_4mac
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Make sure it appears even after rvm, git-prompt and other shell extensions that manipulate the prompt.
-eval "$(direnv hook bash)"
+command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 
 
 #eval "$(starship init bash)"
-eval "$(uv generate-shell-completion bash)"
+command -v uv >/dev/null 2>&1 && eval "$(uv generate-shell-completion bash)"
 

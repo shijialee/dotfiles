@@ -171,13 +171,7 @@ eval "$(pyenv init -)"
 # Make sure it appears even after rvm, git-prompt and other shell extensions that manipulate the prompt.
 eval "$(direnv hook bash)"
 
+
 #eval "$(starship init bash)"
 eval "$(uv generate-shell-completion bash)"
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/qiang/.lmstudio/bin"
-# End of LM Studio CLI section
-
-
-# Added by tally installer
-export PATH="$HOME/.tally/bin:$PATH"

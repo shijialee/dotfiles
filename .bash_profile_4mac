@@ -20,6 +20,7 @@ export EDITOR='/usr/bin/vi'
 
 alias ps='ps aux'
 alias grep='grep --color'
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 
 
 if [[ -e /etc/bash_completion.d/git-prompt ]]; then
@@ -63,5 +64,32 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 # ruby brew install
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="/opt/homebrew/lib/ruby/gems/3.3.0/bin/:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-[ -f /opt/homebrew/bin/mutagen ] && mutagen daemon start
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/qiang/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+# ~/.zshrc or ~/.bashrc
+safe() { 
+    safehouse \
+        --add-dirs-ro="/etc/profile" \
+        --add-dirs-ro="$HOME/.gitignore_global" \
+        --add-dirs-ro="$HOME/.bash_profile" \
+        --add-dirs-ro="$HOME/.dotfiles/link/.bash_profile" \
+        "$@";
+}
+
+# Sandboxed — the default. Just type the command name.
+claude()   { safe claude --dangerously-skip-permissions "$@"; }
+codex()    { safe codex --dangerously-bypass-approvals-and-sandbox "$@"; }
+amp()      { safe amp --dangerously-allow-all "$@"; }
+gemini()   { NO_BROWSER=true safe gemini --yolo "$@"; }
+
+# Unsandboxed — bypass the function with `command`
+# command claude               — plain interactive session

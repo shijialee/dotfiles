@@ -1,0 +1,9 @@
+name: ai-sandbox
+description: Resource limits and isolation for AI dev sandboxes
+config:
+  limits.memory: 3GiB
+  limits.memory.swap: "false"
+  limits.cpu: "2"
+  limits.processes: "2000"
+  security.idmap.isolated: "true"
+devices: {}

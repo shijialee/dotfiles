@@ -175,4 +175,6 @@ command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 command -v uv >/dev/null 2>&1 && eval "$(uv generate-shell-completion bash)"
 
 
-. ~/.local/bin/z.sh
+if [[ -f "$HOME/.dotfiles/scripts/z.sh" ]]; then
+    source "$HOME/.dotfiles/scripts/z.sh"
+fi

@@ -161,7 +161,9 @@ export HISTSIZE=10000
 export HISTFILESIZE=10000
 
 source ~/.dotfiles/git-completion.bash
-source ~/.dotfiles/.bash_profile_4mac
+if [[ "$(uname -s)" == "Darwin" && -f "$HOME/.dotfiles/.bash_profile_4mac" ]]; then
+    source "$HOME/.dotfiles/.bash_profile_4mac"
+fi
 
 #[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -172,3 +174,5 @@ command -v direnv >/dev/null 2>&1 && eval "$(direnv hook bash)"
 #eval "$(starship init bash)"
 command -v uv >/dev/null 2>&1 && eval "$(uv generate-shell-completion bash)"
 
+
+. ~/.local/bin/z.sh

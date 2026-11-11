@@ -15,6 +15,7 @@ ln -fsvn ~/.dotfiles/link/.tmux.conf            ~/.tmux.conf
 ln -fsvn ~/.dotfiles/link/.screenrc            ~/.screenrc
 ln -fsvn ~/.dotfiles/link/.config/kitty        ~/.config/kitty
 ln -fsvn ~/.dotfiles/link/AutoRaise            ~/.config/AutoRaise
+ln -fsvn ~/.dotfiles/link/.config/nvim          ~/.config/nvim
 
 # copy
 # cp ~/.dotfiles/copy/    ~/
